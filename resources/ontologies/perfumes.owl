@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rdf:RDF
+  xmlns:owl="http://www.w3.org/2002/07/owl#"
+  xmlns:gr="http://purl.org/goodrelations/v1#"
+  xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+  xmlns:prfm="http://purl.org/opdm/perfume#"
+  xmlns:opdm="http://purl.org/opdm/utility#"
+  xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+  xmlns:dcterms="http://purl.org/dc/terms/"
+  xmlns:skos="http://www.w3.org/2004/02/skos/core#"
+>
+  <prfm:PerfumeType rdf:about="http://purl.org/opdm/perfume#EspritDeParfum">
+    <rdfs:comment xml:lang="en">Class of perfumes with high perfume oil concentration</rdfs:comment>
+    <rdfs:label xml:lang="en">Esprit de Parfum</rdfs:label>
+  </prfm:PerfumeType>
+  <gr:QuantitativeValue rdf:about="http://purl.org/opdm/perfume#ThirthyML">
+    <gr:hasUnitOfMeasurement rdf:datatype="http://www.w3.org/2001/XMLSchema#string">MLT</gr:hasUnitOfMeasurement>
+    <gr:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">30</gr:hasValue>
+    <rdfs:label>30 ml</rdfs:label>
+  </gr:QuantitativeValue>
+  <prfm:FragranceNote rdf:about="http://purl.org/opdm/perfume#YangYangOfTheComores">
+    <rdfs:label xml:lang="en">Yang-Yang of the Comores</rdfs:label>
+  </prfm:FragranceNote>
+  <owl:ObjectProperty rdf:about="http://purl.org/opdm/perfume#heartNote">
+    <skos:altLabel xml:lang="en">Middle note</skos:altLabel>
+    <rdfs:isDefinedBy>
+      <owl:Ontology rdf:about="http://purl.org/opdm/perfume#PerfumeVocab">
+        <rdfs:label xml:lang="en">Perfume vocabulary</rdfs:label>
+        <dcterms:subject xml:lang="en">perfumes, cologne, fragrance, eau de toilette</dcterms:subject>
+        <rdfs:comment xml:lang="en">Vocabulary to describe perfumes and fragrance</rdfs:comment>
+        <dcterms:creator>Bene Rodriguez-Castro</dcterms:creator>
+        <dcterms:creator rdf:resource="http://www.unibw.de/ebusiness/"/>
+        <dcterms:creator rdf:resource="http://opdm-project.org/"/>
+        <dcterms:creator>Laszlo Torok</dcterms:creator>
+        <dcterms:creator>Martin Hepp</dcterms:creator>
+        <owl:imports rdf:resource="http://purl.org/opdm/utility#"/>
+        <owl:imports rdf:resource="http://purl.org/goodrelations/v1"/>
+      </owl:Ontology>
+    </rdfs:isDefinedBy>
+    <rdfs:range rdf:resource="http://purl.org/opdm/perfume#FragranceNote"/>
+    <rdfs:domain rdf:resource="http://purl.org/opdm/perfume#Perfume"/>
+    <rdfs:label xml:lang="en">Heart note</rdfs:label>
+    <rdfs:subPropertyOf rdf:resource="http://purl.org/goodrelations/v1#qualitativeProductOrServiceProperty"/>
+    <opdm:isConfiguredBy>
+      <opdm:MetadataContainer>
+        <opdm:attributePosition rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">6</opdm:attributePosition>
+        <opdm:rankingDirection rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ASC</opdm:rankingDirection>
+        <opdm:exampleOfUsage rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Damask Rose</opdm:exampleOfUsage>
+        <opdm:priority rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">85</opdm:priority>
+        <opdm:inProfile rdf:resource="http://purl.org/opdm/utility#DefaultProfile"/>
+      </opdm:MetadataContainer>
+    </opdm:isConfiguredBy>
+    <rdfs:comment xml:lang="en">The scent of a perfume that emerges just prior to when the top notes dissipate.</rdfs:comment>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://purl.org/opdm/perfume#baseNote">
+    <rdfs:isDefinedBy rdf:resource="http://purl.org/opdm/perfume#PerfumeVocab"/>
+    <rdfs:range rdf:resource="http://purl.org/opdm/perfume#FragranceNote"/>
+    <rdfs:domain rdf:resource="http://purl.org/opdm/perfume#Perfume"/>
+    <rdfs:label xml:lang="en">Base note</rdfs:label>
+    <rdfs:subPropertyOf rdf:resource="http://purl.org/goodrelations/v1#qualitativeProductOrServiceProperty"/>
+    <opdm:isConfiguredBy>
+      <opdm:MetadataContainer>
+        <opdm:attributePosition rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">7</opdm:attributePosition>
+        <opdm:rankingDirection rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ASC</opdm:rankingDirection>
+        <opdm:exampleOfUsage rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Sambac Jasmine</opdm:exampleOfUsage>
+        <opdm:priority rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">80</opdm:priority>
+        <opdm:inProfile rdf:resource="http://purl.org/opdm/utility#DefaultProfile"/>
+      </opdm:MetadataContainer>
+    </opdm:isConfiguredBy>
+    <rdfs:comment xml:lang="en">The base note lasts the longest and can be perceived in clothing for several months.</rdfs:comment>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://purl.org/opdm/perfume#topNote">
+    <rdfs:isDefinedBy rdf:resource="http://purl.org/opdm/perfume#PerfumeVocab"/>
+    <rdfs:range rdf:resource="http://purl.org/opdm/perfume#FragranceNote"/>
+    <rdfs:domain rdf:resource="http://purl.org/opdm/perfume#Perfume"/>
+    <rdfs:label xml:lang="en">Top note</rdfs:label>
+    <rdfs:subPropertyOf rdf:resource="http://purl.org/goodrelations/v1#qualitativeProductOrServiceProperty"/>
+    <opdm:isConfiguredBy>
+      <opdm:MetadataContainer>
+        <opdm:attributePosition rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</opdm:attributePosition>
+        <opdm:rankingDirection rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ASC</opdm:rankingDirection>
+        <opdm:exampleOfUsage rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Yang-Yang of the Comores</opdm:exampleOfUsage>
+        <opdm:priority rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">90</opdm:priority>
+        <opdm:inProfile rdf:resource="http://purl.org/opdm/utility#DefaultProfile"/>
+      </opdm:MetadataContainer>
+    </opdm:isConfiguredBy>
+    <rdfs:comment xml:lang="en">The scents that are perceived immediately on application of a perfume.</rdfs:comment>
+  </owl:ObjectProperty>
+  <gr:QuantitativeValue rdf:about="http://purl.org/opdm/perfume#HundredML">
+    <gr:hasUnitOfMeasurement rdf:datatype="http://www.w3.org/2001/XMLSchema#string">MLT</gr:hasUnitOfMeasurement>
+    <gr:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">100</gr:hasValue>
+    <rdfs:label>100 ml</rdfs:label>
+  </gr:QuantitativeValue>
+  <prfm:FragranceLine rdf:about="http://purl.org/opdm/perfume#Jadore">
+    <rdfs:label xml:lang="en">J'Adore</rdfs:label>
+  </prfm:FragranceLine>
+  <prfm:FragranceNote rdf:about="http://purl.org/opdm/perfume#SambacJasmine">
+    <rdfs:label xml:lang="en">Sambac Jasmine</rdfs:label>
+  </prfm:FragranceNote>
+  <owl:ObjectProperty rdf:about="http://purl.org/opdm/perfume#designatedFor">
+    <rdfs:isDefinedBy rdf:resource="http://purl.org/opdm/perfume#PerfumeVocab"/>
+    <rdfs:range rdf:resource="http://purl.org/opdm/perfume#Gender"/>
+    <rdfs:domain rdf:resource="http://purl.org/goodrelations/v1#ProductOrService"/>
+    <rdfs:label xml:lang="en">designated for</rdfs:label>
+    <rdfs:subPropertyOf rdf:resource="http://purl.org/goodrelations/v1#qualitativeProductOrServiceProperty"/>
+    <opdm:isConfiguredBy>
+      <opdm:MetadataContainer>
+        <opdm:attributePosition rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">4</opdm:attributePosition>
+        <opdm:rankingDirection rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ASC</opdm:rankingDirection>
+        <opdm:exampleOfUsage rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Men</opdm:exampleOfUsage>
+        <opdm:priority rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">95</opdm:priority>
+        <opdm:inProfile rdf:resource="http://purl.org/opdm/utility#DefaultProfile"/>
+      </opdm:MetadataContainer>
+    </opdm:isConfiguredBy>
+  </owl:ObjectProperty>
+  <prfm:PerfumeType rdf:about="http://purl.org/opdm/perfume#PerfumeExtract">
+    <rdfs:comment xml:lang="en">Class of perfumes with very high perfume oil concentration</rdfs:comment>
+    <rdfs:label xml:lang="en">Perfume Extract</rdfs:label>
+  </prfm:PerfumeType>
+  <owl:ObjectProperty rdf:about="http://purl.org/opdm/perfume#fragranceLine">
+    <rdfs:isDefinedBy rdf:resource="http://purl.org/opdm/perfume#PerfumeVocab"/>
+    <rdfs:range rdf:resource="http://purl.org/opdm/perfume#FragranceLine"/>
+    <rdfs:domain rdf:resource="http://purl.org/opdm/perfume#Perfume"/>
+    <rdfs:label xml:lang="en">fragrance</rdfs:label>
+    <rdfs:subPropertyOf rdf:resource="http://purl.org/goodrelations/v1#qualitativeProductOrServiceProperty"/>
+    <opdm:isConfiguredBy>
+      <opdm:MetadataContainer>
+        <opdm:attributePosition rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">97</opdm:attributePosition>
+        <opdm:rankingDirection rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ASC</opdm:rankingDirection>
+        <opdm:exampleOfUsage rdf:datatype="http://www.w3.org/2001/XMLSchema#string">J'Adore</opdm:exampleOfUsage>
+        <opdm:priority rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</opdm:priority>
+        <opdm:inProfile rdf:resource="http://purl.org/opdm/utility#DefaultProfile"/>
+      </opdm:MetadataContainer>
+    </opdm:isConfiguredBy>
+  </owl:ObjectProperty>
+  <prfm:Gender rdf:about="http://purl.org/opdm/perfume#Men">
+    <rdfs:label xml:lang="en">For Men</rdfs:label>
+  </prfm:Gender>
+  <prfm:Gender rdf:about="http://purl.org/opdm/perfume#Women">
+    <rdfs:label xml:lang="en">For Women</rdfs:label>
+  </prfm:Gender>
+  <prfm:PerfumeType rdf:about="http://purl.org/opdm/perfume#EauDeParfum">
+    <rdfs:comment xml:lang="en">Class of perfumes, that are those we usually mean when talking about perfumes with moderate perfume oil concentration.</rdfs:comment>
+    <rdfs:label xml:lang="en">Eau de Parfum</rdfs:label>
+  </prfm:PerfumeType>
+  <prfm:PerfumeType rdf:about="http://purl.org/opdm/perfume#EauDeToilette">
+    <rdfs:comment xml:lang="en"></rdfs:comment>
+    <rdfs:label xml:lang="en">Eau de Toilette</rdfs:label>
+  </prfm:PerfumeType>
+  <owl:ObjectProperty rdf:about="http://purl.org/opdm/perfume#type">
+    <rdfs:isDefinedBy rdf:resource="http://purl.org/opdm/perfume#PerfumeVocab"/>
+    <rdfs:range rdf:resource="http://purl.org/opdm/perfume#PerfumeType"/>
+    <rdfs:domain rdf:resource="http://purl.org/opdm/perfume#Perfume"/>
+    <rdfs:label xml:lang="en">Perfume category</rdfs:label>
+    <rdfs:subPropertyOf rdf:resource="http://purl.org/goodrelations/v1#qualitativeProductOrServiceProperty"/>
+    <opdm:isConfiguredBy>
+      <opdm:MetadataContainer>
+        <opdm:attributePosition rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</opdm:attributePosition>
+        <opdm:rankingDirection rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ASC</opdm:rankingDirection>
+        <opdm:exampleOfUsage rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Eau De Toilette</opdm:exampleOfUsage>
+        <opdm:priority rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">98</opdm:priority>
+        <opdm:inProfile rdf:resource="http://purl.org/opdm/utility#DefaultProfile"/>
+      </opdm:MetadataContainer>
+    </opdm:isConfiguredBy>
+  </owl:ObjectProperty>
+  <prfm:FragranceLine rdf:about="http://purl.org/opdm/perfume#PourMonsieur">
+    <rdfs:label xml:lang="en">Pour Monsieur</rdfs:label>
+  </prfm:FragranceLine>
+  <owl:ObjectProperty rdf:about="http://purl.org/opdm/perfume#size">
+    <opdm:recommendedUnitOfMeasure rdf:datatype="http://www.w3.org/2001/XMLSchema#string">MLT</opdm:recommendedUnitOfMeasure>
+    <rdfs:isDefinedBy rdf:resource="http://purl.org/opdm/perfume#PerfumeVocab"/>
+    <rdfs:range rdf:resource="http://purl.org/goodrelations/v1#QuantitativeValue"/>
+    <rdfs:domain rdf:resource="http://purl.org/opdm/perfume#Perfume"/>
+    <rdfs:label xml:lang="en">Bottle volume</rdfs:label>
+    <rdfs:subPropertyOf rdf:resource="http://purl.org/goodrelations/v1#quantitativeProductOrServiceProperty"/>
+    <opdm:isConfiguredBy>
+      <opdm:MetadataContainer>
+        <opdm:attributePosition rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">96</opdm:attributePosition>
+        <opdm:rankingDirection rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ASC</opdm:rankingDirection>
+        <opdm:exampleOfUsage rdf:datatype="http://www.w3.org/2001/XMLSchema#string">50 ml</opdm:exampleOfUsage>
+        <opdm:priority rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">3</opdm:priority>
+        <opdm:inProfile rdf:resource="http://purl.org/opdm/utility#DefaultProfile"/>
+      </opdm:MetadataContainer>
+    </opdm:isConfiguredBy>
+    <rdfs:comment xml:lang="en">Bottle volume (usually in millilitre)</rdfs:comment>
+  </owl:ObjectProperty>
+  <gr:QuantitativeValue rdf:about="http://purl.org/opdm/perfume#FiftyML">
+    <gr:hasUnitOfMeasurement rdf:datatype="http://www.w3.org/2001/XMLSchema#string">MLT</gr:hasUnitOfMeasurement>
+    <gr:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">50</gr:hasValue>
+    <rdfs:label>50 ml</rdfs:label>
+  </gr:QuantitativeValue>
+  <prfm:FragranceNote rdf:about="http://purl.org/opdm/perfume#DamaskRose">
+    <rdfs:label xml:lang="en">Damask Rose</rdfs:label>
+  </prfm:FragranceNote>
+  <owl:Class rdf:about="http://purl.org/opdm/perfume#Gender">
+    <rdfs:isDefinedBy rdf:resource="http://purl.org/opdm/perfume#PerfumeVocab"/>
+    <rdfs:subClassOf rdf:resource="http://purl.org/goodrelations/v1#QualitativeValue"/>
+    <rdfs:label xml:lang="en">Gender</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://purl.org/opdm/perfume#FragranceLine">
+    <rdfs:comment xml:lang="en">Fragrance oil that defines the main characteristics of the product</rdfs:comment>
+    <rdfs:isDefinedBy rdf:resource="http://purl.org/opdm/perfume#PerfumeVocab"/>
+    <rdfs:subClassOf rdf:resource="http://purl.org/goodrelations/v1#QualitativeValue"/>
+    <rdfs:label xml:lang="en">Fragrance oil</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://purl.org/opdm/perfume#FragranceNote">
+    <rdfs:comment xml:lang="en">Fragrance notes are used to describe a perfume</rdfs:comment>
+    <rdfs:isDefinedBy rdf:resource="http://purl.org/opdm/perfume#PerfumeVocab"/>
+    <rdfs:subClassOf rdf:resource="http://purl.org/goodrelations/v1#QualitativeValue"/>
+    <rdfs:label xml:lang="en">Fragrance note</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://purl.org/opdm/perfume#Perfume">
+    <rdfs:isDefinedBy rdf:resource="http://purl.org/opdm/perfume#PerfumeVocab"/>
+    <rdfs:label>Perfume</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://purl.org/goodrelations/v1#ProductOrService"/>
+    <rdfs:comment>Includes the entire family of Perfumes.</rdfs:comment>
+    <opdm:category rdf:resource="http://purl.org/opdm/category/google/ns#Perfume"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://purl.org/opdm/perfume#PerfumeType">
+    <rdfs:comment xml:lang="en">Perfume category based on the fragrance concentration</rdfs:comment>
+    <rdfs:isDefinedBy rdf:resource="http://purl.org/opdm/perfume#PerfumeVocab"/>
+    <rdfs:subClassOf rdf:resource="http://purl.org/goodrelations/v1#QualitativeValue"/>
+    <rdfs:label xml:lang="en">Perfume category</rdfs:label>
+  </owl:Class>
+</rdf:RDF>

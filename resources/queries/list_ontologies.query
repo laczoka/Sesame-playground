@@ -1,0 +1,13 @@
+# list all ontologies in the repo, exclude GR
+
+PREFIX rdfs:<http://www.w3.org/2000/01/rdf-schema#>
+PREFIX rdf:<http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX owl:<http://www.w3.org/2002/07/owl#>
+PREFIX opdm:<http://purl.org/opdm/utility#>
+
+SELECT DISTINCT ?onto ?ontolabel ?ontodesc ?userdefined 
+WHERE { ?onto a owl:Ontology. 
+OPTIONAL { ?onto rdfs:label ?ontolabel. 
+         OPTIONAL {?onto rdfs:comment ?ontodesc. } } 
+OPTIONAL { ?onto opdm:isUserDefined ?userdefined } 
+FILTER (?onto != <http://purl.org/goodrelations/v1>). }
