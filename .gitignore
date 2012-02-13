@@ -4,5 +4,7 @@
 /classes
 /native
 /.lein-failures
+/.cake
 /checkouts
 /.lein-deps-sum
+.#*

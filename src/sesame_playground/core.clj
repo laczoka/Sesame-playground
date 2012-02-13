@@ -5,13 +5,13 @@
            (org.openrdf.sail.memory MemoryStore)
            (org.openrdf.sail.inferencer.fc ForwardChainingRDFSInferencer)
            (org.openrdf.rio RDFFormat)
-           (org.openrdf.query QueryLanguage)
+           (org.openrdf.query QueryLanguage BindingSet)
            (java.io File)
            (java.net URL)))
 
 (def base-uri (URL. "http://example.org"))
 
-(def onto-files (-> (File. "resources/ontologies")
+(def onto-files (->> (File. "resources/ontologies")
                     (file-seq )
                     (filter #(.isFile %))))
 
@@ -26,13 +26,17 @@ PREFIX skos:<http://www.w3.org/2004/02/skos/core#>
 PREFIX xsd:<http://www.w3.org/2001/XMLSchema#>
 PREFIX opdm: <http://purl.org/opdm/utility#>")
 
-(def triple-store
+(defn with-common-ns-prefixes [sparql-q]
+  (str common-ns-prefixes " " sparql-q))
+
+
+(defn create-triple-store []
         (doto 
             (SailRepository. 
                 (ForwardChainingRDFSInferencer. 
                     (MemoryStore. ))) 
             (.initialize)))
-
+(def triple-store (create-triple-store ))
 
 (defn insert-triples 
     "Insert triples from an rdf/xml file into the memory-backed triple store\n
@@ -49,10 +53,13 @@ PREFIX opdm: <http://purl.org/opdm/utility#>")
 
 (defn run-query [store sparql-q]
     ;(with-open 
-     (let  [conn (.getConnection store)
-                q-results (.evaluate (.prepareTupleQuery conn QueryLanguage/SPARQL sparql-q))
-                variables (vec (.getBindingNames q-results))]
-            q-results))
+  (let  [conn (.getConnection store)
+         q-results (.evaluate (.prepareTupleQuery
+                               conn
+                               QueryLanguage/SPARQL
+                               sparql-q))
+         variables (vec (.getBindingNames q-results))]
+    q-results))
 
 (defn iteration->seq [iteration]
   (seq
@@ -63,6 +70,9 @@ PREFIX opdm: <http://purl.org/opdm/utility#>")
                (next [this] (.next iteration))
                (remove [this] (.remove iteration)))))))
 
+(defn bindingset-to-map [^BindingSet bs]
+  (reduce #(assoc %1 (keyword (.getName %2)) (str (.getValue %2)) ) {} bs))
+
 (defn load-ontologies [triple-store onto-files]
   (doseq [onto-file onto-files]
-    (insert-triples triple-store) onto-file))
+    (insert-triples triple-store onto-file)))

@@ -8,3 +8,4 @@
                  [org.openrdf.sesame/sesame-queryparser-sparql "2.6.3"]
                  [org.slf4j/slf4j-log4j12 "1.6.4"]]
   :repositories { "sesame" "http://repo.aduna-software.org/maven2/releases/" })
+
