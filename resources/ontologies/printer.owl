@@ -1,0 +1,467 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rdf:RDF
+  xmlns:foaf="http://xmlns.com/foaf/0.1/"
+  xmlns:owl="http://www.w3.org/2002/07/owl#"
+  xmlns:gr="http://purl.org/goodrelations/v1#"
+  xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+  xmlns:opdm="http://purl.org/opdm/utility#"
+  xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+  xmlns:dcterms="http://purl.org/dc/terms/"
+  xmlns:skos="http://www.w3.org/2004/02/skos/core#"
+  xmlns:oprn="http://purl.org/opdm/printer/ns#"
+>
+  <owl:ObjectProperty rdf:about="http://purl.org/opdm/printer/ns#printingResolution">
+    <opdm:recommendedUnitOfMeasure rdf:datatype="http://www.w3.org/2001/XMLSchema#string">E39</opdm:recommendedUnitOfMeasure>
+    <rdfs:domain rdf:resource="http://purl.org/opdm/printer/ns#Printer"/>
+    <rdfs:isDefinedBy>
+      <owl:Ontology rdf:about="http://purl.org/opdm/printer/ns#">
+        <owl:imports rdf:resource="http://purl.org/goodrelations/v1/"/>
+        <owl:imports rdf:resource="http://purl.org/opdm/utility#"/>
+        <dcterms:creator>Martin Hepp</dcterms:creator>
+        <dcterms:creator>Laszlo Torok</dcterms:creator>
+        <dcterms:creator>Bene Rodriguez-Castro</dcterms:creator>
+        <dcterms:creator rdf:resource="http://www.unibw.de/ebusiness/"/>
+        <dcterms:creator rdf:resource="http://opdm-project.org/"/>
+        <rdfs:comment xml:lang="en">Home &amp; Office printers including all-in-one devices with faxing, scanning and copying capabilities.</rdfs:comment>
+        <dcterms:subject xml:lang="en">printer, scanner, fax, photocopy, inkjet, laser printer, copy machine, xerox, all-in-one printer</dcterms:subject>
+        <rdfs:label xml:lang="en">Printer vocabulary</rdfs:label>
+      </owl:Ontology>
+    </rdfs:isDefinedBy>
+    <opdm:isConfiguredBy>
+      <opdm:MetadataContainer>
+        <opdm:exampleOfUsage rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The value of this property is an individual of the gr:QuantitativeValue class using the UN/CEFACT code E39 for dots per inch.</opdm:exampleOfUsage>
+        <opdm:attributePosition rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">8</opdm:attributePosition>
+        <opdm:rankingDirection rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ASC</opdm:rankingDirection>
+        <opdm:inProfile rdf:resource="http://purl.org/opdm/utility#DefaultProfile"/>
+        <opdm:priority rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">55</opdm:priority>
+      </opdm:MetadataContainer>
+    </opdm:isConfiguredBy>
+    <rdfs:comment xml:lang="en">Printing resolution of the printer using the UN/CEFACT code E39 for dots per inch.</rdfs:comment>
+    <rdfs:subPropertyOf rdf:resource="http://purl.org/goodrelations/v1#quantitativeProductOrServiceProperty"/>
+    <rdfs:range rdf:resource="http://purl.org/goodrelations/v1#QuantitativeValue"/>
+    <rdfs:label xml:lang="en">Printing resolution</rdfs:label>
+  </owl:ObjectProperty>
+  <oprn:CommInterface rdf:about="http://purl.org/opdm/printer/ns#Ethernet">
+    <rdfs:label xml:lang="en">Ethernet</rdfs:label>
+    <rdfs:comment xml:lang="en">This individual represents an Ethernet communication interface.</rdfs:comment>
+    <rdfs:isDefinedBy rdf:resource="http://purl.org/opdm/printer/ns#"/>
+  </oprn:CommInterface>
+  <owl:ObjectProperty rdf:about="http://purl.org/opdm/printer/ns#scanningSpeed">
+    <opdm:recommendedUnitOfMeasure rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ZP</opdm:recommendedUnitOfMeasure>
+    <rdfs:domain rdf:resource="http://purl.org/opdm/printer/ns#Scanner"/>
+    <rdfs:isDefinedBy rdf:resource="http://purl.org/opdm/printer/ns#"/>
+    <opdm:isConfiguredBy>
+      <opdm:MetadataContainer>
+        <opdm:exampleOfUsage rdf:datatype="http://www.w3.org/2001/XMLSchema#string">20 (/ min)</opdm:exampleOfUsage>
+        <opdm:attributePosition rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">11</opdm:attributePosition>
+        <opdm:rankingDirection rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ASC</opdm:rankingDirection>
+        <opdm:inProfile rdf:resource="http://purl.org/opdm/utility#DefaultProfile"/>
+        <opdm:priority rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">40</opdm:priority>
+      </opdm:MetadataContainer>
+    </opdm:isConfiguredBy>
+    <rdfs:comment xml:lang="en">Scanning speed using the UN/CEFACT code ZP for number of pages, to indicate pages per minute.</rdfs:comment>
+    <rdfs:subPropertyOf rdf:resource="http://purl.org/goodrelations/v1#quantitativeProductOrServiceProperty"/>
+    <rdfs:range rdf:resource="http://purl.org/goodrelations/v1#QuantitativeValue"/>
+    <rdfs:label xml:lang="en">Scanning speed</rdfs:label>
+  </owl:ObjectProperty>
+  <oprn:ColorRange rdf:about="http://purl.org/opdm/printer/ns#BW">
+    <rdfs:label xml:lang="en">Black &amp; White</rdfs:label>
+    <rdfs:comment xml:lang="en">This individual represents the black &amp; white color.</rdfs:comment>
+    <rdfs:isDefinedBy rdf:resource="http://purl.org/opdm/printer/ns#"/>
+  </oprn:ColorRange>
+  <owl:AnnotationProperty rdf:about="http://xmlns.com/foaf/0.1/depiction"/>
+  <owl:ObjectProperty rdf:about="http://purl.org/opdm/printer/ns#printingSpeed">
+    <opdm:recommendedUnitOfMeasure rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ZP</opdm:recommendedUnitOfMeasure>
+    <rdfs:domain rdf:resource="http://purl.org/opdm/printer/ns#Printer"/>
+    <rdfs:isDefinedBy rdf:resource="http://purl.org/opdm/printer/ns#"/>
+    <opdm:isConfiguredBy>
+      <opdm:MetadataContainer>
+        <opdm:exampleOfUsage rdf:datatype="http://www.w3.org/2001/XMLSchema#string">25 (/ min)</opdm:exampleOfUsage>
+        <opdm:attributePosition rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">10</opdm:attributePosition>
+        <opdm:rankingDirection rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ASC</opdm:rankingDirection>
+        <opdm:inProfile rdf:resource="http://purl.org/opdm/utility#DefaultProfile"/>
+        <opdm:priority rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">45</opdm:priority>
+      </opdm:MetadataContainer>
+    </opdm:isConfiguredBy>
+    <rdfs:comment xml:lang="en">Printing speed using the UN/CEFACT code ZP for number of pages, to indicate pages per minute.</rdfs:comment>
+    <rdfs:subPropertyOf rdf:resource="http://purl.org/goodrelations/v1#quantitativeProductOrServiceProperty"/>
+    <rdfs:range rdf:resource="http://purl.org/goodrelations/v1#QuantitativeValue"/>
+    <rdfs:label xml:lang="en">Printing speed</rdfs:label>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://purl.org/opdm/printer/ns#printingColorRange">
+    <rdfs:domain rdf:resource="http://purl.org/opdm/printer/ns#Printer"/>
+    <rdfs:isDefinedBy rdf:resource="http://purl.org/opdm/printer/ns#"/>
+    <opdm:isConfiguredBy>
+      <opdm:MetadataContainer>
+        <opdm:exampleOfUsage rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The value of this property is an individual of the oprn:ColorRange class</opdm:exampleOfUsage>
+        <opdm:attributePosition rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">7</opdm:attributePosition>
+        <opdm:rankingDirection rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ASC</opdm:rankingDirection>
+        <opdm:inProfile rdf:resource="http://purl.org/opdm/utility#DefaultProfile"/>
+        <opdm:priority rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">60</opdm:priority>
+      </opdm:MetadataContainer>
+    </opdm:isConfiguredBy>
+    <rdfs:comment xml:lang="en">This property represents the color capabilities supported by the device and links: (a) an individual of the oprn:Printer class; to (b) an individual of the oprn:CommInterface class.</rdfs:comment>
+    <rdfs:subPropertyOf rdf:resource="http://purl.org/goodrelations/v1#qualitativeProductOrServiceProperty"/>
+    <rdfs:range rdf:resource="http://purl.org/opdm/printer/ns#ColorRange"/>
+    <rdfs:label xml:lang="en">Printing color range</rdfs:label>
+  </owl:ObjectProperty>
+  <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/creator"/>
+  <owl:ObjectProperty rdf:about="http://purl.org/opdm/printer/ns#memoryCapacity">
+    <opdm:recommendedUnitOfMeasure rdf:datatype="http://www.w3.org/2001/XMLSchema#string">4L</opdm:recommendedUnitOfMeasure>
+    <rdfs:domain>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <rdf:Description rdf:about="http://purl.org/opdm/printer/ns#Printer"/>
+          <rdf:Description rdf:about="http://purl.org/opdm/printer/ns#Scanner"/>
+          <rdf:Description rdf:about="http://purl.org/opdm/printer/ns#Fax"/>
+          <rdf:Description rdf:about="http://purl.org/opdm/printer/ns#CopyMachine"/>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:domain>
+    <rdfs:isDefinedBy rdf:resource="http://purl.org/opdm/printer/ns#"/>
+    <opdm:isConfiguredBy>
+      <opdm:MetadataContainer>
+        <opdm:exampleOfUsage rdf:datatype="http://www.w3.org/2001/XMLSchema#string">256 (MB)</opdm:exampleOfUsage>
+        <opdm:attributePosition rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">12</opdm:attributePosition>
+        <opdm:rankingDirection rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ASC</opdm:rankingDirection>
+        <opdm:inProfile rdf:resource="http://purl.org/opdm/utility#DefaultProfile"/>
+        <opdm:priority rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">35</opdm:priority>
+      </opdm:MetadataContainer>
+    </opdm:isConfiguredBy>
+    <rdfs:comment xml:lang="en">Size of the internal memory capacity.</rdfs:comment>
+    <rdfs:subPropertyOf rdf:resource="http://purl.org/goodrelations/v1#quantitativeProductOrServiceProperty"/>
+    <rdfs:range rdf:resource="http://purl.org/goodrelations/v1#QuantitativeValue"/>
+    <rdfs:label xml:lang="en">Memory capacity</rdfs:label>
+  </owl:ObjectProperty>
+  <owl:DatatypeProperty rdf:about="http://purl.org/opdm/printer/ns#supportsPrintMediaType">
+    <rdfs:domain rdf:resource="http://purl.org/opdm/printer/ns#Printer"/>
+    <rdfs:isDefinedBy rdf:resource="http://purl.org/opdm/printer/ns#"/>
+    <opdm:isConfiguredBy>
+      <opdm:MetadataContainer>
+        <opdm:exampleOfUsage rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Letter</opdm:exampleOfUsage>
+        <opdm:attributePosition rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">6</opdm:attributePosition>
+        <opdm:rankingDirection rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ASC</opdm:rankingDirection>
+        <opdm:inProfile rdf:resource="http://purl.org/opdm/utility#DefaultProfile"/>
+        <opdm:priority rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">65</opdm:priority>
+      </opdm:MetadataContainer>
+    </opdm:isConfiguredBy>
+    <rdfs:comment xml:lang="en">Supported printing media such as different sizes and kinds of paper, envelopes etc.</rdfs:comment>
+    <rdfs:subPropertyOf rdf:resource="http://purl.org/goodrelations/v1#datatypeProductOrServiceProperty"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:label xml:lang="en">Supported print media</rdfs:label>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="http://purl.org/opdm/printer/ns#supportsCartridge">
+    <rdfs:domain rdf:resource="http://purl.org/opdm/printer/ns#Printer"/>
+    <rdfs:isDefinedBy rdf:resource="http://purl.org/opdm/printer/ns#"/>
+    <opdm:isConfiguredBy>
+      <opdm:MetadataContainer>
+        <opdm:exampleOfUsage rdf:datatype="http://www.w3.org/2001/XMLSchema#string">150XL (for Lexmark Pro915)</opdm:exampleOfUsage>
+        <opdm:attributePosition rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">4</opdm:attributePosition>
+        <opdm:rankingDirection rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ASC</opdm:rankingDirection>
+        <opdm:inProfile rdf:resource="http://purl.org/opdm/utility#DefaultProfile"/>
+        <opdm:priority rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">80</opdm:priority>
+      </opdm:MetadataContainer>
+    </opdm:isConfiguredBy>
+    <rdfs:comment xml:lang="en">Supported cartridges, toners</rdfs:comment>
+    <rdfs:subPropertyOf rdf:resource="http://purl.org/goodrelations/v1#datatypeProductOrServiceProperty"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:label xml:lang="en">Supported cartridge</rdfs:label>
+  </owl:DatatypeProperty>
+  <oprn:CommInterface rdf:about="http://purl.org/opdm/printer/ns#Usb30">
+    <rdfs:label xml:lang="en">USB 3.0</rdfs:label>
+    <rdfs:comment xml:lang="en">USB 3.0</rdfs:comment>
+    <rdfs:isDefinedBy rdf:resource="http://purl.org/opdm/printer/ns#"/>
+  </oprn:CommInterface>
+  <owl:Class rdf:about="http://purl.org/opdm/printer/ns#MatrixPrinter">
+    <rdfs:isDefinedBy rdf:resource="http://purl.org/opdm/printer/ns#"/>
+    <rdfs:comment xml:lang="en">Matrix Printer</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://purl.org/opdm/printer/ns#Printer"/>
+    <opdm:category rdf:resource="http://purl.org/opdm/category/google/ns#MatrixPrinter"/>
+    <rdfs:label xml:lang="en">Matrix Printer</rdfs:label>
+  </owl:Class>
+  <owl:ObjectProperty rdf:about="http://purl.org/opdm/printer/ns#commInterface">
+    <rdfs:domain>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <rdf:Description rdf:about="http://purl.org/opdm/printer/ns#Printer"/>
+          <rdf:Description rdf:about="http://purl.org/opdm/printer/ns#Scanner"/>
+          <rdf:Description rdf:about="http://purl.org/opdm/printer/ns#Fax"/>
+          <rdf:Description rdf:about="http://purl.org/opdm/printer/ns#CopyMachine"/>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:domain>
+    <rdfs:isDefinedBy rdf:resource="http://purl.org/opdm/printer/ns#"/>
+    <opdm:isConfiguredBy>
+      <opdm:MetadataContainer>
+        <opdm:exampleOfUsage rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The value of this property is an individual of the oprn:CommInterface class</opdm:exampleOfUsage>
+        <opdm:attributePosition rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">15</opdm:attributePosition>
+        <opdm:rankingDirection rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ASC</opdm:rankingDirection>
+        <opdm:inProfile rdf:resource="http://purl.org/opdm/utility#DefaultProfile"/>
+        <opdm:priority rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">20</opdm:priority>
+      </opdm:MetadataContainer>
+    </opdm:isConfiguredBy>
+    <rdfs:comment xml:lang="en">This property represents the communication interface supported by the device and links: (a) an individual of one of the domain classes; to (b) an individual of the oprn:CommInterface class.</rdfs:comment>
+    <rdfs:subPropertyOf rdf:resource="http://purl.org/goodrelations/v1#qualitativeProductOrServiceProperty"/>
+    <rdfs:range rdf:resource="http://purl.org/opdm/printer/ns#CommInterface"/>
+    <rdfs:label xml:lang="en">Connectivity</rdfs:label>
+  </owl:ObjectProperty>
+  <owl:DatatypeProperty rdf:about="http://purl.org/opdm/printer/ns#supportsPrintMediaSize">
+    <rdfs:domain rdf:resource="http://purl.org/opdm/printer/ns#Printer"/>
+    <rdfs:isDefinedBy rdf:resource="http://purl.org/opdm/printer/ns#"/>
+    <opdm:isConfiguredBy>
+      <opdm:MetadataContainer>
+        <opdm:exampleOfUsage rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A4</opdm:exampleOfUsage>
+        <opdm:attributePosition rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</opdm:attributePosition>
+        <opdm:rankingDirection rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ASC</opdm:rankingDirection>
+        <opdm:inProfile rdf:resource="http://purl.org/opdm/utility#DefaultProfile"/>
+        <opdm:priority rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">70</opdm:priority>
+      </opdm:MetadataContainer>
+    </opdm:isConfiguredBy>
+    <rdfs:comment xml:lang="en">Supported printing media such as different sizes and kinds of paper, envelopes etc.</rdfs:comment>
+    <rdfs:subPropertyOf rdf:resource="http://purl.org/goodrelations/v1#datatypeProductOrServiceProperty"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:label xml:lang="en">Supported print media</rdfs:label>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="http://purl.org/opdm/printer/ns#documentFeeder">
+    <rdfs:domain>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <rdf:Description rdf:about="http://purl.org/opdm/printer/ns#Printer"/>
+          <rdf:Description rdf:about="http://purl.org/opdm/printer/ns#Scanner"/>
+          <rdf:Description rdf:about="http://purl.org/opdm/printer/ns#Fax"/>
+          <rdf:Description rdf:about="http://purl.org/opdm/printer/ns#CopyMachine"/>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:domain>
+    <rdfs:isDefinedBy rdf:resource="http://purl.org/opdm/printer/ns#"/>
+    <opdm:isConfiguredBy>
+      <opdm:MetadataContainer>
+        <opdm:exampleOfUsage rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Yes</opdm:exampleOfUsage>
+        <opdm:attributePosition rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">3</opdm:attributePosition>
+        <opdm:rankingDirection rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ASC</opdm:rankingDirection>
+        <opdm:inProfile rdf:resource="http://purl.org/opdm/utility#DefaultProfile"/>
+        <opdm:priority rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">85</opdm:priority>
+      </opdm:MetadataContainer>
+    </opdm:isConfiguredBy>
+    <rdfs:comment xml:lang="en">Does the scanner have a document feeder to hold multiple pages?</rdfs:comment>
+    <rdfs:subPropertyOf rdf:resource="http://purl.org/goodrelations/v1#datatypeProductOrServiceProperty"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    <rdfs:label xml:lang="en">Document feeder</rdfs:label>
+  </owl:DatatypeProperty>
+  <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/subject"/>
+  <owl:ObjectProperty rdf:about="http://purl.org/opdm/printer/ns#powerConsumption">
+    <opdm:recommendedUnitOfMeasure rdf:datatype="http://www.w3.org/2001/XMLSchema#string">WTT</opdm:recommendedUnitOfMeasure>
+    <rdfs:domain>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <rdf:Description rdf:about="http://purl.org/opdm/printer/ns#Printer"/>
+          <rdf:Description rdf:about="http://purl.org/opdm/printer/ns#Scanner"/>
+          <rdf:Description rdf:about="http://purl.org/opdm/printer/ns#Fax"/>
+          <rdf:Description rdf:about="http://purl.org/opdm/printer/ns#CopyMachine"/>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:domain>
+    <rdfs:isDefinedBy rdf:resource="http://purl.org/opdm/printer/ns#"/>
+    <opdm:isConfiguredBy>
+      <opdm:MetadataContainer>
+        <opdm:exampleOfUsage rdf:datatype="http://www.w3.org/2001/XMLSchema#string">12 (W)</opdm:exampleOfUsage>
+        <opdm:attributePosition rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">13</opdm:attributePosition>
+        <opdm:rankingDirection rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ASC</opdm:rankingDirection>
+        <opdm:inProfile rdf:resource="http://purl.org/opdm/utility#DefaultProfile"/>
+        <opdm:priority rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">30</opdm:priority>
+      </opdm:MetadataContainer>
+    </opdm:isConfiguredBy>
+    <rdfs:comment xml:lang="en">Defines the power requirements.</rdfs:comment>
+    <rdfs:subPropertyOf rdf:resource="http://purl.org/goodrelations/v1#quantitativeProductOrServiceProperty"/>
+    <rdfs:range rdf:resource="http://purl.org/goodrelations/v1#QuantitativeValue"/>
+    <rdfs:label xml:lang="de">Energiebedarf</rdfs:label>
+    <rdfs:label xml:lang="en">Power requirements</rdfs:label>
+  </owl:ObjectProperty>
+  <oprn:CommInterface rdf:about="http://purl.org/opdm/printer/ns#Usb20">
+    <rdfs:label xml:lang="en">USB 2.0</rdfs:label>
+    <rdfs:comment xml:lang="en">USB 2.0</rdfs:comment>
+    <rdfs:isDefinedBy rdf:resource="http://purl.org/opdm/printer/ns#"/>
+  </oprn:CommInterface>
+  <owl:DatatypeProperty rdf:about="http://purl.org/opdm/printer/ns#supportsPhotoPrinting">
+    <rdfs:domain rdf:resource="http://purl.org/opdm/printer/ns#Printer"/>
+    <rdfs:isDefinedBy rdf:resource="http://purl.org/opdm/printer/ns#"/>
+    <opdm:isConfiguredBy>
+      <opdm:MetadataContainer>
+        <opdm:exampleOfUsage rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Yes</opdm:exampleOfUsage>
+        <opdm:attributePosition rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</opdm:attributePosition>
+        <opdm:rankingDirection rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ASC</opdm:rankingDirection>
+        <opdm:inProfile rdf:resource="http://purl.org/opdm/utility#DefaultProfile"/>
+        <opdm:priority rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">90</opdm:priority>
+      </opdm:MetadataContainer>
+    </opdm:isConfiguredBy>
+    <rdfs:comment xml:lang="en">Device is capable of photo printing.</rdfs:comment>
+    <rdfs:subPropertyOf rdf:resource="http://purl.org/goodrelations/v1#datatypeProductOrServiceProperty"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    <rdfs:label xml:lang="en">Photo printing</rdfs:label>
+  </owl:DatatypeProperty>
+  <owl:Class rdf:about="http://purl.org/opdm/printer/ns#MultiPurposeLaserPrinter">
+    <rdfs:isDefinedBy rdf:resource="http://purl.org/opdm/printer/ns#"/>
+    <rdfs:comment xml:lang="en">A multipurpose laser printer that can print, fax, scan and(or) copy as well.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://purl.org/opdm/printer/ns#LaserPrinter"/>
+    <rdfs:subClassOf rdf:resource="http://purl.org/opdm/printer/ns#Scanner"/>
+    <rdfs:subClassOf rdf:resource="http://purl.org/opdm/printer/ns#Fax"/>
+    <rdfs:subClassOf rdf:resource="http://purl.org/opdm/printer/ns#CopyMachine"/>
+    <opdm:category rdf:resource="http://purl.org/opdm/category/google/ns#MultiPurposePrinter"/>
+    <rdfs:label xml:lang="en">Multiple function laser printer</rdfs:label>
+  </owl:Class>
+  <owl:DatatypeProperty rdf:about="http://purl.org/opdm/printer/ns#supportsPictBridge">
+    <rdfs:domain rdf:resource="http://purl.org/opdm/printer/ns#Printer"/>
+    <rdfs:isDefinedBy rdf:resource="http://purl.org/opdm/printer/ns#"/>
+    <opdm:isConfiguredBy>
+      <opdm:MetadataContainer>
+        <opdm:exampleOfUsage rdf:datatype="http://www.w3.org/2001/XMLSchema#string">150XL (for Lexmark Pro915)</opdm:exampleOfUsage>
+        <opdm:attributePosition rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</opdm:attributePosition>
+        <opdm:rankingDirection rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ASC</opdm:rankingDirection>
+        <opdm:inProfile rdf:resource="http://purl.org/opdm/utility#DefaultProfile"/>
+        <opdm:priority rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">88</opdm:priority>
+      </opdm:MetadataContainer>
+    </opdm:isConfiguredBy>
+    <rdfs:comment xml:lang="en">PictBridge is a standard that allows connecting cameras to directly to printers and print photos without using a intermediary device like a PC.</rdfs:comment>
+    <rdfs:subPropertyOf rdf:resource="http://purl.org/goodrelations/v1#datatypeProductOrServiceProperty"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:label xml:lang="en">PictBridge</rdfs:label>
+  </owl:DatatypeProperty>
+  <owl:ObjectProperty rdf:about="http://purl.org/opdm/printer/ns#recommendedMonthlyPageVolume">
+    <opdm:recommendedUnitOfMeasure rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ZP</opdm:recommendedUnitOfMeasure>
+    <rdfs:domain rdf:resource="http://purl.org/opdm/printer/ns#Printer"/>
+    <rdfs:isDefinedBy rdf:resource="http://purl.org/opdm/printer/ns#"/>
+    <opdm:isConfiguredBy>
+      <opdm:MetadataContainer>
+        <opdm:exampleOfUsage rdf:datatype="http://www.w3.org/2001/XMLSchema#string">300 - 1200 / month</opdm:exampleOfUsage>
+        <opdm:attributePosition rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">14</opdm:attributePosition>
+        <opdm:rankingDirection rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ASC</opdm:rankingDirection>
+        <opdm:inProfile rdf:resource="http://purl.org/opdm/utility#DefaultProfile"/>
+        <opdm:priority rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">25</opdm:priority>
+      </opdm:MetadataContainer>
+    </opdm:isConfiguredBy>
+    <rdfs:comment xml:lang="en">Recommended Monthly Page Volume</rdfs:comment>
+    <rdfs:subPropertyOf rdf:resource="http://purl.org/goodrelations/v1#quantitativeProductOrServiceProperty"/>
+    <rdfs:range rdf:resource="http://purl.org/goodrelations/v1#QuantitativeValue"/>
+    <rdfs:label xml:lang="en">Recommended Monthly Page Volume</rdfs:label>
+  </owl:ObjectProperty>
+  <oprn:CommInterface rdf:about="http://purl.org/opdm/printer/ns#Usb">
+    <rdfs:label xml:lang="en">USB</rdfs:label>
+    <rdfs:comment xml:lang="en">USB unspecified version</rdfs:comment>
+    <rdfs:isDefinedBy rdf:resource="http://purl.org/opdm/printer/ns#"/>
+  </oprn:CommInterface>
+  <gr:QuantitativeValue rdf:about="http://purl.org/opdm/printer/ns#OneMonth">
+    <rdfs:isDefinedBy rdf:resource="http://purl.org/opdm/printer/ns#"/>
+    <rdfs:comment xml:lang="en">1 month.</rdfs:comment>
+    <gr:hasUnitOfMeasurement rdf:datatype="http://www.w3.org/2001/XMLSchema#string">MIN</gr:hasUnitOfMeasurement>
+    <rdfs:label xml:lang="en">1 month.</rdfs:label>
+    <gr:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</gr:hasValue>
+  </gr:QuantitativeValue>
+  <owl:Class rdf:about="http://purl.org/opdm/printer/ns#MultiPurposeInkjetPrinter">
+    <rdfs:isDefinedBy rdf:resource="http://purl.org/opdm/printer/ns#"/>
+    <rdfs:comment xml:lang="en">A multipurpose inkjet printer that can print, fax, scan and(or) copy as well.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://purl.org/opdm/printer/ns#Scanner"/>
+    <rdfs:subClassOf rdf:resource="http://purl.org/opdm/printer/ns#InkjetPrinter"/>
+    <rdfs:subClassOf rdf:resource="http://purl.org/opdm/printer/ns#Fax"/>
+    <rdfs:subClassOf rdf:resource="http://purl.org/opdm/printer/ns#CopyMachine"/>
+    <opdm:category rdf:resource="http://purl.org/opdm/category/google/ns#MultiPurposePrinter"/>
+    <rdfs:label xml:lang="en">Multiple function inkjet printer</rdfs:label>
+  </owl:Class>
+  <oprn:ColorRange rdf:about="http://purl.org/opdm/printer/ns#Color">
+    <rdfs:label xml:lang="en">Color</rdfs:label>
+    <rdfs:comment xml:lang="en">This individual represents any non black &amp; white color.</rdfs:comment>
+    <rdfs:isDefinedBy rdf:resource="http://purl.org/opdm/printer/ns#"/>
+  </oprn:ColorRange>
+  <oprn:CommInterface rdf:about="http://purl.org/opdm/printer/ns#Wifi">
+    <rdfs:label xml:lang="en">Wifi</rdfs:label>
+    <rdfs:comment xml:lang="en">This individual represents a WiFi communication interface.</rdfs:comment>
+    <rdfs:isDefinedBy rdf:resource="http://purl.org/opdm/printer/ns#"/>
+  </oprn:CommInterface>
+  <gr:QuantitativeValue rdf:about="http://purl.org/opdm/printer/ns#OneMinute">
+    <rdfs:isDefinedBy rdf:resource="http://purl.org/opdm/printer/ns#"/>
+    <rdfs:comment xml:lang="en">1 minute.</rdfs:comment>
+    <gr:hasUnitOfMeasurement rdf:datatype="http://www.w3.org/2001/XMLSchema#string">MIN</gr:hasUnitOfMeasurement>
+    <rdfs:label xml:lang="en">1 min.</rdfs:label>
+    <gr:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</gr:hasValue>
+  </gr:QuantitativeValue>
+  <owl:ObjectProperty rdf:about="http://purl.org/opdm/printer/ns#scanningResolution">
+    <opdm:recommendedUnitOfMeasure rdf:datatype="http://www.w3.org/2001/XMLSchema#string">E39</opdm:recommendedUnitOfMeasure>
+    <rdfs:domain rdf:resource="http://purl.org/opdm/printer/ns#Scanner"/>
+    <rdfs:isDefinedBy rdf:resource="http://purl.org/opdm/printer/ns#"/>
+    <opdm:isConfiguredBy>
+      <opdm:MetadataContainer>
+        <opdm:exampleOfUsage rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The value of this property is an individual of the gr:QuantitativeValue class using the UN/CEFACT code E39 for dots per inch.</opdm:exampleOfUsage>
+        <opdm:attributePosition rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">9</opdm:attributePosition>
+        <opdm:rankingDirection rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ASC</opdm:rankingDirection>
+        <opdm:inProfile rdf:resource="http://purl.org/opdm/utility#DefaultProfile"/>
+        <opdm:priority rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">50</opdm:priority>
+      </opdm:MetadataContainer>
+    </opdm:isConfiguredBy>
+    <rdfs:comment xml:lang="en">Scanning resolution of the printer using the UN/CEFACT code E39 for dots per inch.</rdfs:comment>
+    <rdfs:subPropertyOf rdf:resource="http://purl.org/goodrelations/v1#quantitativeProductOrServiceProperty"/>
+    <rdfs:range rdf:resource="http://purl.org/goodrelations/v1#QuantitativeValue"/>
+    <rdfs:label xml:lang="en">Scanning resolution</rdfs:label>
+  </owl:ObjectProperty>
+  <owl:Class rdf:about="http://purl.org/opdm/printer/ns#LaserPrinter">
+    <rdfs:label xml:lang="en">Laser printer</rdfs:label>
+    <opdm:category rdf:resource="http://purl.org/opdm/category/google/ns#LaserPrinter"/>
+    <rdfs:isDefinedBy rdf:resource="http://purl.org/opdm/printer/ns#"/>
+    <rdfs:subClassOf rdf:resource="http://purl.org/opdm/printer/ns#Printer"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://purl.org/opdm/printer/ns#Fax">
+    <foaf:depiction rdf:resource="http://upload.wikimedia.org/wikipedia/commons/1/1c/Samfax.jpgco"/>
+    <rdfs:isDefinedBy rdf:resource="http://purl.org/opdm/printer/ns#"/>
+    <rdfs:comment xml:lang="en">Super class of all fax machines.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://purl.org/goodrelations/v1#ProductOrService"/>
+    <opdm:category rdf:resource="http://purl.org/opdm/category/google/ns#Fax"/>
+    <rdfs:label xml:lang="en">Generic fax</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://purl.org/opdm/printer/ns#CopyMachine">
+    <foaf:depiction rdf:resource="http://upload.wikimedia.org/wikipedia/commons/2/23/Photocopier-Xerox-2004.jpg"/>
+    <rdfs:isDefinedBy rdf:resource="http://purl.org/opdm/printer/ns#"/>
+    <rdfs:comment xml:lang="en">Super class of all copy machines.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://purl.org/goodrelations/v1#ProductOrService"/>
+    <opdm:category rdf:resource="http://purl.org/opdm/category/google/ns#CopyMachine"/>
+    <rdfs:label xml:lang="en">Generic copy machine</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://purl.org/opdm/printer/ns#Printer">
+    <foaf:depiction rdf:resource="http://upload.wikimedia.org/wikipedia/commons/0/0b/Canon_ir2270.jpg"/>
+    <rdfs:isDefinedBy rdf:resource="http://purl.org/opdm/printer/ns#"/>
+    <rdfs:comment xml:lang="en">Super class of all printers.</rdfs:comment>
+    <skos:altLabel xml:lang="es">Impresora genérica</skos:altLabel>
+    <rdfs:subClassOf rdf:resource="http://purl.org/goodrelations/v1#ProductOrService"/>
+    <opdm:category rdf:resource="http://purl.org/opdm/category/google/ns#Printer"/>
+    <rdfs:label xml:lang="en">Generic printer</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://purl.org/opdm/printer/ns#ColorRange">
+    <rdfs:label xml:lang="en">Color range</rdfs:label>
+    <rdfs:comment xml:lang="en">This class represents the color range supported by the printing device.</rdfs:comment>
+    <rdfs:isDefinedBy rdf:resource="http://purl.org/opdm/printer/ns#"/>
+    <rdfs:subClassOf rdf:resource="http://purl.org/goodrelations/v1#QualitativeValue"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://purl.org/opdm/printer/ns#CommInterface">
+    <rdfs:label xml:lang="en">Communication interface</rdfs:label>
+    <rdfs:comment xml:lang="en">This class represents the type of communication interface supported by the printing device.</rdfs:comment>
+    <rdfs:isDefinedBy rdf:resource="http://purl.org/opdm/printer/ns#"/>
+    <rdfs:subClassOf rdf:resource="http://purl.org/goodrelations/v1#QualitativeValue"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://purl.org/opdm/printer/ns#InkjetPrinter">
+    <rdfs:label xml:lang="en">Inkjet Printer</rdfs:label>
+    <opdm:category rdf:resource="http://purl.org/opdm/category/google/ns#InkjetPrinter"/>
+    <rdfs:isDefinedBy rdf:resource="http://purl.org/opdm/printer/ns#"/>
+    <rdfs:subClassOf rdf:resource="http://purl.org/opdm/printer/ns#Printer"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://purl.org/opdm/printer/ns#Scanner">
+    <foaf:depiction rdf:resource="http://upload.wikimedia.org/wikipedia/commons/e/e3/Scanner.view.750pix.jpg"/>
+    <rdfs:isDefinedBy rdf:resource="http://purl.org/opdm/printer/ns#"/>
+    <rdfs:comment xml:lang="en">Super class of all scanners.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://purl.org/goodrelations/v1#ProductOrService"/>
+    <opdm:category rdf:resource="http://purl.org/opdm/category/google/ns#Scanner"/>
+    <rdfs:label xml:lang="en">Generic scanner</rdfs:label>
+  </owl:Class>
+  <rdf:Description>
+    <rdf:first rdf:resource="http://purl.org/opdm/printer/ns#Fax"/>
+    <rdf:rest rdf:parseType="Collection">
+      <rdf:Description rdf:about="http://purl.org/opdm/printer/ns#CopyMachine"/>
+    </rdf:rest>
+  </rdf:Description>
+</rdf:RDF>

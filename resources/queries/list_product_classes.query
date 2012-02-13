@@ -1,0 +1,24 @@
+# ?BINDING_1 could be e.g. <http://purl.org/opdm/printer#>
+
+PREFIX rdfs:<http://www.w3.org/2000/01/rdf-schema#>
+PREFIX rdf:<http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX gr:<http://purl.org/goodrelations/v1#>
+PREFIX foaf:<http://xmlns.com/foaf/0.1/>
+PREFIX owl:<http://www.w3.org/2002/07/owl#>
+PREFIX opdm:<http://purl.org/opdm/utility#>
+
+SELECT DISTINCT ?ProductClass ?label ?comment ?depiction ?category ?onto ?parent 
+WHERE { 
+      ?ProductClass rdfs:subClassOf gr:ProductOrService.
+      ?ProductClass rdfs:isDefinedBy ?ontology.
+      ?ontology a owl:Ontology.
+OPTIONAL {
+         ?ProductClass rdfs:subClassOf ?parent.
+         ?parent rdfs:subClassOf gr:ProductOrService.
+FILTER ( ?ProductClass != ?parent ) }
+OPTIONAL {?ProductClass opdm:category ?category.} 
+OPTIONAL {?ProductClass rdfs:label ?label.}
+OPTIONAL {?ProductClass rdfs:comment ?comment.}
+OPTIONAL {?ProductClass foaf:depiction ?depiction.}
+FILTER ( ?ontology != <http://purl.org/goodrelations/v1> )
+}
