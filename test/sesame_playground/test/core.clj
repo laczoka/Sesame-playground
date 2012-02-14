@@ -10,33 +10,22 @@
   (f)
   (clear-store triple-store))
 
-;; slurp up a SPARQL query from a text file
-(defn- from-file [fn-name]
-  (slurp (str "resources/queries/" fn-name ".query")))
-
-;; put result of a sparql query into a set so that order-agnostic
-;; comparison can be made
-(defn- query-result-set [sparql-q]
-  (let [results (run-query triple-store sparql-q)
-        result-map-seq (map bindingset-to-map (iteration->seq results))]
-    (set result-map-seq)))
-
 ;; activate fixture
 (use-fixtures :once with-gr-and-perfume-and-printer)
 
 ;; Test 1. query all available ontology elements and related properties
 (deftest list-all-ontologies
   (is (= (set [
-                {
-                 :onto "http://purl.org/opdm/perfume#PerfumeVocab",
-                 :ontolabel "\"Perfume vocabulary\"@en",
-                 :ontodesc "\"Vocabulary to describe perfumes and fragrance\"@en" }
+               {
+                :onto "http://purl.org/opdm/perfume#PerfumeVocab",
+                :ontolabel "\"Perfume vocabulary\"@en",
+                :ontodesc "\"Vocabulary to describe perfumes and fragrance\"@en" }
                {
                 :onto "http://purl.org/opdm/printer/ns#",
                 :ontolabel "\"Printer vocabulary\"@en",
                 :ontodesc "\"Home & Office printers including all-in-one devices with faxing, scanning and copying capabilities.\"@en"}])
 
-         (query-result-set (from-file "list_ontologies")))
+         (query-result-set triple-store (from-file "list_ontologies")))
       "Couldn't load all expected ontologies"))
 ;; Test 2. List all product classes in the the triple store
 ;; (rdfs:subClassesOf gr:ProductOrService)
@@ -52,7 +41,7 @@
                {:label "\"Laser printer\"@en"}
                {:label "\"Perfume\""}
                ])
-         (query-result-set (from-file "list_product_classes")))
+         (query-result-set triple-store (from-file "list_product_classes")))
       "Retrieved set of product classes do not match the expected set"))
 
 ;; Test 3. List all "datatype product properties" for
@@ -65,7 +54,6 @@
                {:label "\"Supported print media\"@en"}
                {:label "\"color (0..1)\"@en"}
                ])
-         (query-result-set (from-file "datatype_pos_properties")))
+         (query-result-set triple-store (from-file "datatype_pos_properties")))
       "Retrieved set of product properties do not match the expected set"))
-;; Test 4. List all "quantitative product properties for
-;; http://purl.org/opdm/printer#AllInOneLaserPrinter
+

@@ -9,7 +9,7 @@
            (java.io File)
            (java.net URL)))
 
-(def base-uri (URL. "http://example.org"))
+(def base-uri (URL. "http://example.org/"))
 
 (def onto-files (->> (File. "resources/ontologies")
                     (file-seq )
@@ -38,12 +38,22 @@ PREFIX opdm: <http://purl.org/opdm/utility#>")
             (.initialize)))
 (def triple-store (create-triple-store ))
 
-(defn insert-triples 
-    "Insert triples from an rdf/xml file into the memory-backed triple store\n
+(defmulti insert-triples
+  "Insert triples from various sources e.g. an rdf/xml file into the memory-backed triple store\n
      Example: (insert-triples the-store (java.io.File. \"path_to_triple_file\"))"
-     [store triples-file]
-    (with-open [conn (.getConnection store)]
+  (fn [store triples] (class triples)))
+
+;; insert triples from an RDF/XML file
+(defmethod insert-triples java.io.File [store triples-file] 
+  (with-open [conn (.getConnection store)]
     (.add conn triples-file (str base-uri) RDFFormat/RDFXML (make-array Resource 0))))  
+
+;; insert triples from as a sequence of n-triples statements
+(defmethod insert-triples java.util.Collection [store triples]
+  (with-open [conn (.getConnection store)]
+    (doseq [triple triples]
+      (let [triple-str-as-stream (java.io.ByteArrayInputStream. (.getBytes triple "UTF-8")) ]
+        (.add conn triple-str-as-stream (str base-uri) RDFFormat/NTRIPLES (make-array Resource 0))))))
 
 (defn clear-store 
     "Remove all triples from the store"
@@ -70,8 +80,19 @@ PREFIX opdm: <http://purl.org/opdm/utility#>")
                (next [this] (.next iteration))
                (remove [this] (.remove iteration)))))))
 
-(defn bindingset-to-map [^BindingSet bs]
+;; slurp up a SPARQL query from a text file
+(defn from-file [fn-name]
+  (slurp (str "resources/queries/" fn-name ".query")))
+
+(defn- bindingset-to-map [^BindingSet bs]
   (reduce #(assoc %1 (keyword (.getName %2)) (str (.getValue %2)) ) {} bs))
+
+;; put result of a sparql query into a set so that order-agnostic
+;; comparison can be made
+(defn query-result-set [triple-store sparql-q]
+  (let [results (run-query triple-store sparql-q)
+        result-map-seq (map bindingset-to-map (iteration->seq results))]
+    (set result-map-seq)))
 
 (defn load-ontologies [triple-store onto-files]
   (doseq [onto-file onto-files]
