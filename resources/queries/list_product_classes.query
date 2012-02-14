@@ -1,4 +1,4 @@
-# ?BINDING_1 could be e.g. <http://purl.org/opdm/printer#>
+# List all product classes and their respective properties
 
 PREFIX rdfs:<http://www.w3.org/2000/01/rdf-schema#>
 PREFIX rdf:<http://www.w3.org/1999/02/22-rdf-syntax-ns#>
@@ -7,7 +7,7 @@ PREFIX foaf:<http://xmlns.com/foaf/0.1/>
 PREFIX owl:<http://www.w3.org/2002/07/owl#>
 PREFIX opdm:<http://purl.org/opdm/utility#>
 
-SELECT DISTINCT ?ProductClass ?label ?comment ?depiction ?category ?onto ?parent 
+SELECT DISTINCT ?label 
 WHERE { 
       ?ProductClass rdfs:subClassOf gr:ProductOrService.
       ?ProductClass rdfs:isDefinedBy ?ontology.

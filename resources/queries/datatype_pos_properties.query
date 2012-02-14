@@ -1,24 +1,23 @@
-#?BINDING_1 could be e.g. ?aproperty rdfs:domain <http://purl.org/opdm/printer/ns#MultiPurposeInkjetPrinter>
-#I want all properties of a certain class and its parents(!) which are rdfs:subPropertyOf gr:datatypeProductOrServiceProperty
-# unfortunately the parents may be defined using owl:unionOf (cls1, cls2 )
+# Get all properties that are rdfs:subClassOf gr:datatypeProductOrServiceProperty and ?productcls satisfies the r# dfs:domain assertion
+# In our example ?productcls is associated with http://purl.org/opdm/printer/ns#AllInOneLaserPrinter
 
 PREFIX rdf:<http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 PREFIX owl:<http://www.w3.org/2002/07/owl#>  
 PREFIX rdfs:<http://www.w3.org/2000/01/rdf-schema#> 
 PREFIX gr:<http://purl.org/goodrelations/v1#> 
 
-SELECT DISTINCT ?aproperty ?label ?range ?comment
+SELECT DISTINCT  ?label
 WHERE 
 { 
   ?aproperty rdfs:subPropertyOf gr:datatypeProductOrServiceProperty. 
 # get all properties that directly satisfy the rdfs:domain assertion
   {                             
-        ?aproperty rdfs:domain <http://purl.org/opdm/printer/ns#MultiPurposeInkjetPrinter>.
+        ?aproperty rdfs:domain <http://purl.org/opdm/printer/ns#AllInOneLaserPrinter>.
   }
 # get all properties that have a superclass of the class as rdfs:domain
   UNION
   {
-        <http://purl.org/opdm/printer/ns#MultiPurposeInkjetPrinter> rdfs:subClassOf ?parentcls.
+        <http://purl.org/opdm/printer/ns#AllInOneLaserPrinter> rdfs:subClassOf ?parentcls.
         ?aproperty rdfs:domain ?parentcls.
   }
 # get all properties with owl:unionOf domain which directly satisfy the rdfs:domain assertion
@@ -26,7 +25,7 @@ WHERE
   {
          ?aproperty rdfs:domain ?cls.
          ?cls owl:unionOf ?list.             
-         ?list rdf:rest*/rdf:first <http://purl.org/opdm/printer/ns#MultiPurposeInkjetPrinter>.       
+         ?list rdf:rest*/rdf:first <http://purl.org/opdm/printer/ns#AllInOneLaserPrinter>.       
   }
 # or a superclass of a class is member of the unionOf construct
   UNION
@@ -34,7 +33,7 @@ WHERE
          ?aproperty rdfs:domain ?cls.
          ?cls owl:unionOf ?list.
          ?list rdf:rest*/rdf:first ?parentcls.
-         <http://purl.org/opdm/printer/ns#MultiPurposeInkjetPrinter> rdfs:subClassOf ?parentcls.       
+         <http://purl.org/opdm/printer/ns#AllInOneLaserPrinter> rdfs:subClassOf ?parentcls.       
   }
 
         ?aproperty rdfs:range ?range. 
